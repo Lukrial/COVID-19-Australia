@@ -8,33 +8,24 @@ void setup() {
   background(255);
   data = loadTable("https://raw.githubusercontent.com/owid/covid-19-data/master/public/data/owid-covid-data.csv", "header");
 
-  deaths = new int[310];
+  deaths = new int[500];
 
   println(data.getRowCount()+" total rows in table");
   int i = 0;
   for (TableRow row : data.rows()) {
     if (row.getString("location").equals("Australia")) {
-      
       String death = row.getString("total_deaths");
-      if (death.equals("")) {
-        deaths[i] = 0;
-      }
-      else
-      {
-        String[] ss = split(death,'.');
+        if (death.equals("")) {
+          deaths[i] = 0;
+         }
+     else{
+       String[] ss = split(death, '.');
          deaths[i] = Integer.parseInt(ss[0]);
-      }
-      i++;
-      
-      println(deaths);
-      
+       }
+     i++;
+     println(deaths);
     }
   }
-
-
-
-  //loop igennem deaths listen og tegner grafen!!
-
   img1 = loadImage("DoHCrest.png");
   img2 = loadImage("haha.png");
 }
