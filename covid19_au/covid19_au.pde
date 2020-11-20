@@ -22,7 +22,7 @@ void setup() {
       else
       {
         String[] ss = split(death,'.');
-         deaths[i] = Integer.parseInt(ss[0]);
+         //deaths[i] = Integer.parseInt(ss[0]); //udkommenteret da det ikke virker med programmet lige nu
       }
       i++;
       
@@ -30,7 +30,6 @@ void setup() {
       
     }
   }
-
 
 
   //loop igennem deaths listen og tegner grafen!!
